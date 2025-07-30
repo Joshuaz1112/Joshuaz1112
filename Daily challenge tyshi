@@ -1,1 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
+int main() {
+char fullname[300];
+int age;
+char agestring[300];
+char sub[300];
+char dream[300];
+char result[300];
+
+printf("What is your full name?\n");
+fgets(fullname, sizeof(fullname), stdin);
+fullname[strcspn(fullname, "\n")] = '\0';
+
+printf("How old are you?\n");
+fgets(agestring, sizeof(agestring), stdin);
+agestring[strcspn(agestring, "\n")] = '\0';
+
+age = atoi(agestring);
+
+printf("What is your favorite subject?\n");
+fgets(sub, sizeof(sub), stdin);
+sub[strcspn(sub, "\n")] = '\0';
+
+printf("What do you want to become?\n");
+fgets(dream, sizeof(dream), stdin);
+dream[strcspn(dream, "\n")] = '\0';
+
+sprintf(result, "Hi, I'm %s! I'm %d years old, my favorite subject is %s, and I wanna become %s!", fullname, age, sub, dream);
+
+printf("%s", result);
+
+   return 0;
+}
