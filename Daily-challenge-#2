@@ -5,15 +5,15 @@ int main() {
     char food[50];
     char result[100];
     
-    printf("tell me ur name😳😳");
+    printf("tell me ur name😳😳\n");
     fgets(name, sizeof(name), stdin);
     name[strcspn(name, "\n")] = '\0';
     
-    printf("tell me ur favorite food🍌🍌👈");
+    printf("tell me ur favorite food🍌🍌👈\n");
     fgets(food, sizeof(food), stdin);
     food[strcspn(food, "\n")] = '\0';
     
    sprintf(result, "Hi, I'm %s, and my favorite food is %s!🥰🥰😩", name, food);
-  printf("%s", result);
+  printf("%s\n", result);
 }
    
