@@ -1,1 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
+int main() {
+    char age[113];
+    int agehaha;
+    
+    printf("what's your age, vro?\n");
+    fgets(age, sizeof(age), stdin);
+    age[strcspn(age, "\n")] = '\0';
+    
+    agehaha = atoi(age);
+    
+    if (agehaha >= 1 && agehaha <= 3) {
+        printf("you're too damn young to use you're cellphone!\n");
+    }
+    
+   else if (agehaha >= 5 && agehaha <= 12) {
+       printf("you're a damn child! suck ur thumb and go to school!\n");
+   }
+           
+    else if (agehaha >= 13 && agehaha <= 17) {
+       printf("you're a teenager, wow!! definitely shocking😬😬\n");
+    }
+    
+    else if (agehaha >= 18 && agehaha <= 20) {
+        printf("you're a legal adult!! You can vote for trump!!\n");
+    }
+    
+    else if(agehaha <=99 && agehaha >= 21) {
+        printf("WOOOOOO, you're an adult!!\n");
+    } 
+ 
+   else if(agehaha <= 113 && agehaha >= 100) {
+               printf("you're too damn old vro\n");
+    }
+    return 0;
+       }
+    
+  
+    
+    
+               
+    
+    
+       
