@@ -1,1 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
+int main() {
+    char character1[1000];
+    char character2[1000];
+    char result[1000];
+    
+    printf("gimme that first character vro\n");
+    fgets(character1, sizeof(character1), stdin);
+    character1[strcspn(character1, "\n")] = '\0';   
+
+    printf("gimme the second character\n");
+    fgets(character2, sizeof(character2), stdin);
+    character2[strcspn(character2, "\n")] = '\0';
+    
+    sprintf(result, "%s × %s\n", character1, character2);
+    printf("%s\n", result);
+}
