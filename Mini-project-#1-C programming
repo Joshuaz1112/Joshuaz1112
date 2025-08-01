@@ -1,1 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
+int main() {
+    double result;
+    char op;
+    double num1;
+    double num2;
+    char final[10000];
+    
+    
+    printf("gimme a number\n");
+    scanf("%lf", &num1);
+    
+    printf("gimmr a second number\n");
+    scanf("%lf", &num2);
+    
+    
+    getchar();
+    
+    printf("choose operation vro(+, -, *, /, ^)\n");
+    scanf("%c", &op);   
+       
+    if (op == '+') {
+        result = round(num1 + num2);
+    }
+   
+    else if(op == '-') {
+        result = round(num1 - num2);
+    }
+    
+    else if(op == '*') {
+        result = round(num1 * num2);
+    }
+    
+    else if(op == '/' && num2 != 0) {
+        result = round((double)num1 / (double)num2);
+    }
+    
+    else if(op == '/' && num2 == 0) {
+        printf("can't divide by 0, dumbahh");
+    }
+    else if(op == '^') {
+        result = round(pow(num1, num2));
+    }
+    
+   sprintf(final, "the result is: %.2f", result);
+     printf("the result is: %s\n", final);
+    
+return 0;
+   } 
+    
+        
+   
+    
+    
