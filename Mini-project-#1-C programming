@@ -1,1 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
+int main() {
+    char num1[10000];
+    char num2[10000];
+    int result;
+    char op;
+    int nume1;
+    int nume2;
+    char final[10000];
+    
+    
+    printf("gimme a number\n");
+    fgets(num1, sizeof(num1), stdin);
+    num1[strcspn(num1, "\n")] = '\0';
+    
+    nume1 = atoi(num1);
+    
+    printf("gimmr a second number\n");
+    fgets(num2, sizeof(num2), stdin);
+    num2[strcspn(num2, "\n")] = '\0';
+    
+    nume2 = atoi(num2);
+    
+    printf("choose operation vro(+, -, *, /)\n");
+    scanf("%c", &op);
+       
+    if (op == '+') {
+        result = nume1 + nume2;
+    }
+   
+    else if(op == '-') {
+        result = nume1 - nume2;
+    }
+    
+    else if(op == '*') {
+        result = nume1 * nume2;
+    }
+    
+    else if(op == '/' && nume2 != 0) {
+        result = nume1 / nume2;
+    }
+    
+    sprintf(final, "the result is: %d", result);
+    printf("%s\n", final);
+   } 
+    
+        
+   
+    
+    
