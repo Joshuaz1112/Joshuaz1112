@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
+
+int main() {
+    double weight;
+    double height;
+    char yes[3];
+    char no[2];
+    char answer[100];
+    char maybe[5];
+    double bmi;
+    char final[100];
+    
+    
+    printf("How heavy are you in kilograms?\n");
+    scanf("%lf", &weight);
+    
+    printf("How tall are you in meters?\n");
+    scanf("%lf", &height);
+    
+    getchar();
+    
+    printf("Do u wanna know ur BMI? (Yes, no, or maybe)\n");
+    fgets(answer, sizeof(answer), stdin);
+    answer[strcspn(answer, "\n")] = '\0';
+    
+    for (int i = 0; answer[i]; i++) {
+        answer[i] = tolower(answer[i]);
+    }
+    
+    
+    if (strncmp(answer, "yes", 3) == 0) {
+        printf("alright!\n");
+        bmi = round(weight / (height * height) * 100) / 100;
+        sprintf(final, "You're BMI is: %.2lf\n ", bmi);       
+        printf("%s\n", final);
+        printf("Do u wanna know your category? (yes or no)\n ");
+        fgets(answer, sizeof(answer), stdin);
+        answer[strcspn(answer, "\n")] = '\0'; 
+        
+                 for (int i = 0; answer[i]; i++) {
+                     answer[i] = tolower(answer[i]);
+                     answer[i] = tolower(answer[i]);
+                 }
+        
+        
+        if (strncmp(answer, "yes", 3) == 0) {
+            if (bmi < 16) {
+                printf("Severely underweight.\n ");
+               return 0;
+            }
+            else if (bmi < 17 && bmi > 15.9 ) {
+                printf("Moderately underweight\n");
+                return 0;
+            }
+            else if (bmi < 18.5 && bmi > 16.9) {
+                printf("Mildly underweight\n");
+                return 0;
+            }
+            else if (bmi < 25 && bmi > 18.4) {
+                printf("Normal\n");
+                return 0;
+            }
+            else if (bmi < 30 && bmi > 24.9) {
+                printf("Overweight\n");
+                return 0;
+            }
+            else if (bmi < 35 && bmi > 29.9) {
+                printf("Class 1 obese\n");
+                return 0;
+            }
+            else if (bmi < 40 && bmi > 34.9) {
+                printf("Class 2 obese\n");
+                return 0;
+            }
+            else if (bmi >= 40) {
+            printf("Class 3 obese (morbidly or severely obese)");
+                
+            
+        }
+        else if (strncmp(answer, "no", 2) == 0) {
+            return 0;
+        }
+        else if (strncmp(answer, "maybe", 5) == 0) {
+      printf("ok!!\n");
+      return 0;
+        }
+        else {
+            printf("choose correcly!\n");
+        }
+        
+      
+            
+    }
+    
+    else if (strncmp(answer, "no", 2) == 0) {
+        printf("Alright, no worries!\n");
+        return 0;
+    }
+    
+    else if (strncmp(answer, "maybe", 5) == 0) {
+        printf("uh, ok?\n");
+        return 1;
+    }
+    else {
+        printf("Error! Answer properly\n");
+        return 1;
+    }
+    
+    
+    return 0;
+}
+   }     
+        
+    
+    
+    
+    
+    
+   
