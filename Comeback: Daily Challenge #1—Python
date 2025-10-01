@@ -1,0 +1,10 @@
+# asks for name
+name = input("What's your name?\n")
+
+# asks for age
+age = input("Cool! How old are you?\n")
+
+# asks for interest
+interest = input("What are your interests?\n")
+
+print ("Hey! I'm " + name + ", I'm " + age + " years old" + " and I'm interested in " + interest + ". have a great day! ")
