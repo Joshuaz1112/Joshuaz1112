@@ -1,0 +1,29 @@
+
+# Asks for first input
+a = int(input("Input First Number\n"))
+
+# Asks for second input
+b = int(input("Input Second Number\n"))
+
+# Asks user to choose among operations
+Operation = input("Choose operation (+, -, *, /)\n")
+
+if b == 0 and Operation == "/": 
+     print("Invalid Input! Can't Divide by 0!")
+elif Operation == "+":
+ 	Result = a + b
+ 	print("The result is:", Result)
+elif Operation == "-":
+ 	Result = a - b
+ 	print("The result is:", Result)
+elif Operation == "*":
+ 	Result = a * b
+ 	print("The result is:", Result)	
+else:
+ 	Result == a / b
+ 	
+ 	print("The result is:", Result)
+ 	
+ 	
+ 
+ 
