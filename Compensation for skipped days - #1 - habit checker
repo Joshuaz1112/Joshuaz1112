@@ -1,0 +1,25 @@
+import datetime
+
+Today = datetime.datetime.now()
+Yesterday = Today - datetime.timedelta(days=1)
+
+Input = input("What did u do today?")
+
+def log():
+    # Read the file first
+    with open("Habit.txt", "r") as file:
+        lines = file.read().splitlines()
+
+    # Check if yesterday was missed
+    if str(Yesterday.date()) not in lines:
+        with open("Habit.txt", "a") as file:
+            file.write(f"{Yesterday.date()} - missed\n")
+
+    # Log today's activity
+    with open("Habit.txt", "a") as file:
+        if Input == "":
+            file.write(f"{Today.date()} - missed\n")
+        else:
+            file.write(f"{Today.date()} - Done\n")
+
+log()
