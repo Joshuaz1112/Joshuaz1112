@@ -1,0 +1,14 @@
+import datetime
+
+mood = input("Yo wassup bruh, what you feelin' today?\n")
+
+def log():	
+	with open("mood.txt", "a") as file:
+		(file.write(f"{datetime.datetime.now()} - {mood}\n"))
+		print("Mood logged at ",datetime.datetime.now())
+
+log()
+
+
+			
+
